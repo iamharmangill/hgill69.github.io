@@ -1,0 +1,21 @@
+# [Project B - Proposal]({% post_url proposal %})
+
+## Topic - Vue.js
+The topic for my Project B is Vue.js, also known as Vue which is a progressive framework for building user interfaces. I am using Vue for my Project 2. So, in order to enhance my skill set and really understand and experiment with this language, i choose to go ahead with Vue.
+
+## Project - A Game
+In this tutorial, i will develop a small fight game(without character visuals) against a monster using pure Vue. However, in case i have more time to work, i'll also develop a Quotes web app in which we can post our quotes.
+
+## Deliverables
+For the game users can:-
+*Start a new game
+*Attack
+*Special Attack
+*Heal
+*Give Up
+
+For the quote app users can:-
+*Post a quote
+*Delete a quote
+
+I am using safari books to learn vue and it has these projects in it. However, i'll try to make modifications to make it better. Here is the [link](https://www.safaribooksonline.com/videos/vue-js-2/9781788992817) to the safari course.
