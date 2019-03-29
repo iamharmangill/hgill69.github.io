@@ -13,7 +13,7 @@ To begin with, download the basic template provided which contains the html and 
 ![Image](/images/MS-10.png)
 
 #### index.html
-`
+```
 <!DOCTYPE html>
 <html>
 
@@ -23,7 +23,7 @@ To begin with, download the basic template provided which contains the html and 
     <link href="css/foundation.min.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
 </head>
-`
+```
 Here is the head section of HTML page in which we have title, script of vue and links to css and css stylesheets.
 #### index.html
 ```
