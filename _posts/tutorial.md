@@ -7,11 +7,73 @@ However, in this project we will be making a simple game using the basic vue dir
 
 To get started, the user will need to know the basic HTML and CSS. Also, it would be great if you have seen the introductory tutorial provided on the vue website. It would be a good practise to know and apply the basic features that you just watched in this application.
 
-To begin with, download the basic template provided which contains the html and css pages with buttons and some styles added with no functionality.
+To begin with, download the basic template provided which contains the html and css pages with buttons and some styles added with no functionality. Here is the [link]()
 
-### EXPLAIN HTML FILE WITH IMAGES
+#### index.html
+```
+<!DOCTYPE html>
+<html>
 
-Now open the HTML file that you just downloaded, you’ll see in the script section that we have already added script for including vue in our project and also connected the CSS file.
+<head>
+    <title>Monster Slayer</title>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link href="css/foundation.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+```
+Here is the head section of HTML page in which we have title, script of vue and links to css and css stylesheets.
+#### index.html
+```
+<body>
+    <div id="app">
+        <h1 class="mons">Monster Slayer</h1>
+        <section class="row">
+            <div class="small-6 columns">
+                <h1 class="text-center">YOU</h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" 
+                    style="background-color: green; margin: 0; color: white;" 
+                    :style="{width: playerHealth + '%'}">
+                        {{ playerHealth }}
+                    </div>
+                </div>
+            </div>
+            <div class="small-6 columns">
+                <h1 class="text-center">MONSTER</h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" :style="{width: monsterHealth + '%'}">
+                        {{ monsterHealth }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row controls" v-if="!gameIsRunning">
+            <div class="small-12 columns">
+                <button id="start-game" @click="startGame">START NEW GAME</button>
+            </div>
+        </section>
+        <section class="row controls" v-else>
+            <div class="small-12 columns">
+                <button id="attack" @click="attack">ATTACK</button>
+                <button id="special-attack" @click="specialAttack">SPECIAL ATTACK</button>
+                <button id="heal" @click="heal">HEAL</button>
+                <button id="give-up" @click="giveUp">GIVE UP</button>
+            </div>
+        </section>
+        <section class="row log" v-if="turns.length > 0" >
+            <div class="small-12 columns">
+                <ul>
+                    <li v-for="turn in turns"
+                        :class= "{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}" >
+                        {{ turn.text }}
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+```
+Here is the body element of the HTML file where we have different sections representing rows and columns. We have used bootstrap in HTML to make it look nice and is really fast and easy to use. Inside the sections, we have different div elements and buttons that creats the basic template of pur app without any functionalities.
 
 Now, create an app.js file in your project folder. And import your app.js file in your HTML file using Script tag just above the body end tag “</body>” as shown below:
 ```
@@ -22,11 +84,11 @@ Now, create an app.js file in your project folder. And import your app.js file i
 </html>
 ```
 
-
+```
 Note: You can choose any name for your javaScript file, but be very careful while importing.
 As of now, we can start writing in app.js file.
-
-App.js
+```
+#### App.js
 ```
 new Vue({
    el: '#app',
@@ -54,8 +116,6 @@ new Vue({
 
 We’ll store playerHealth and set its value initially to 100. Similarly we’ll add monsterHealth and set its value to 100. These data properties will track the health of player and monster. We’ll also add ‘gameIsRunning’ to track the state of game and set it to false initially which means that the game is not running by default.
 And, let’s also add turns which we’’ll use to log the actions of our player or monster in our game.
-
-
 
 Now let’s use these data properties in our html.
 
@@ -116,10 +176,7 @@ Note: In order to use v-if and v-else, it’s important that both the elements s
 Now let’s add some functionalities to the buttons that we have. In order to do so, we will use event listener. This can be done using “v-on” directive of vue. Instead of writing “v-on”, we can simply use ‘@’ symbol. Here we’ll use click event listener which can be used by writing “v-on:click” or by simply using “@click”.
 
 
-
-
-
-index.html
+#### index.html
 ```
 <section class="row controls" v-if="!gameIsRunning">
     <div class="small-12 columns">
@@ -147,21 +204,16 @@ Add turns edits herer………..
 
 So, let’s start creating functions. To start creating functions, we’ll add methods object in app.js file.
 
-app.js
+#### app.js
 ```
 methods: {
     //add functions here
 }
 ```
 
-
-
-
-
-
 Now, let’s create startGame function.
 
-app.js
+#### app.js
 ```
 methods: {
     startGame: function () {
@@ -181,7 +233,7 @@ Before, we move on to create functions to attack we’ll create two more functio
 
 First one is to calculate the damage.
 
-app.js
+#### app.js
 ```
 calculateDamage: function (min, max) {
    return Math.random();
@@ -224,7 +276,6 @@ checkWin: function () {
 ```
 Here, we use if else statements to check the winner. If the monster health becomes 0, this shows a message of winning and a confirmation if you want to start a new game. Similarly, it checks the monster health and returns a lose message and a confirmation if you want to play again. 
 // explain propel afterwards
-
 
 Before we begin with attack function, let’s create monsterAttack function because with every click of the user, monster will also deal some damage to the user.
 ```
