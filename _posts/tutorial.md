@@ -7,7 +7,7 @@ However, in this project we will be making a simple game using the basic vue dir
 
 To get started, the user will need to know the basic HTML and CSS. Also, it would be great if you have seen the introductory tutorial provided on the vue website. It would be a good practise to know and apply the basic features that you just watched in this application.
 
-To begin with, download the basic template provided which contains the html and css pages with buttons and some styles added with no functionality. Here is the [link]()
+To begin with, download the basic template provided which contains the html and css pages with buttons and some styles added with no functionality. Here is the [link](https://drive.google.com/file/d/1KRAHMiiCiJWcB4Vwxt6oPby5PZ6yIFfl/view?usp=sharing)
 
 #### index.html
 ```
