@@ -1,4 +1,4 @@
-# Tutorial for Monster-Slayer
+# [Tutorial for Monster-Slayer]({% post_url tutorial %})
 ## A simple game with Vue
 
 Vue.js is an open-source JavaScript framework for building user interfaces and single-page applications. Main features of vue are components, template and its reactivity. Vue  makes it so easy to make single page components with their own scripts and styles that can be used in other components very easily just by importing them.
