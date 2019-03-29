@@ -9,6 +9,9 @@ To get started, the user will need to know the basic HTML and CSS. Also, it woul
 
 To begin with, download the basic template provided which contains the html and css pages with buttons and some styles added with no functionality. Here is the [link](https://drive.google.com/file/d/1KRAHMiiCiJWcB4Vwxt6oPby5PZ6yIFfl/view?usp=sharing)
 
+
+![Image](/images/MS-10.png)
+
 #### index.html
 ```
 <!DOCTYPE html>
@@ -69,6 +72,7 @@ Here is the head section of HTML page in which we have title, script of vue and 
     </div>
 </body>
 ```
+
 Here is the body element of the HTML file where we have different sections representing rows and columns. We have used bootstrap in HTML to make it look nice and is really fast and easy to use. Inside the sections, we have different div elements and buttons that creats the basic template of pur app without any functionalities.
 
 Now, create an app.js file in your project folder. And import your app.js file in your HTML file using Script tag just above the body end tag “</body>” as shown below:
@@ -319,6 +323,8 @@ attack: function () {
 ```
 As we have created the monsterattack function, in a similar way we will create this function with few modifications. Here we will deal damage to the monster and log the player turn. Also, we’ll run the monsterAttack function here as we’re the one clicking the buttons.
 
+![Image](/images/MS-4.png)
+
 ```
 specialAttack: function () {
            var damage = this.calculateDamage(7, 15);
@@ -333,6 +339,9 @@ specialAttack: function () {
            this.monsterAttack();  
        },
 ```
+
+![Image](/images/MS-3.png)
+
 This function is also similar to attack function but we have made this a special attack by increasing the damage that we’ll deal to the monster and modifies the lof text to display “hits hard” instead of “hard” in attack fucntion.
 ```
 heal: function () {
@@ -350,10 +359,16 @@ heal: function () {
            this.monsterAttack();
        },
 ```
+
+![Image](/images/MS-2.png)
+
 Now let,s create the heal function. As it is clear from the name that this function will heal the user i.e. will add to user’s health bar. we have selected a constant value of 10 to heal. We’ll execute this statement in “if” statement to make sure that the value of playerHealth doesn’t increase more than 100. And we’ll execute the monsterAttack as the monster will continue to attack us even when we’re healing.
 ```
 giveUp: function () {
            this.gameIsRunning = false;
        },
 ```
+
+![Image](/images/MS-1.png)
+
 We should never give up in life. But in case you decide to give up, this function will help you in doing so. In this function, we just set the gameIsRunning to false and it stops the game.
