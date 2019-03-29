@@ -1,5 +1,5 @@
 # Tutorial for Monster-Slayer
-A simple game with Vue
+## A simple game with Vue
 
 Vue.js is an open-source JavaScript framework for building user interfaces and single-page applications. Main features of vue are components, template and its reactivity. Vue  makes it so easy to make single page components with their own scripts and styles that can be used in other components very easily just by importing them.
 
@@ -9,7 +9,7 @@ To get started, the user will need to know the basic HTML and CSS. Also, it woul
 
 To begin with, download the basic template provided which contains the html and css pages with buttons and some styles added with no functionality.
 
-###EXPLAIN HTML FILE WITH IMAGES
+### EXPLAIN HTML FILE WITH IMAGES
 
 Now open the HTML file that you just downloaded, you’ll see in the script section that we have already added script for including vue in our project and also connected the CSS file.
 
@@ -36,9 +36,9 @@ new Vue({
 In the app.js file, we’ll have to create an instance of Vue using the “new Vue()” function.
 
 In the Vue instance, that we just created, we will connect it with specific element in the DOM that we want to manipulate. Here we are connecting this Vue instance with the div element with id:app as shown above.
-
+```
 Note: ‘el’ stands for element.
-
+```
 Now, let’s store some data in this vue instance.
 ```
 new Vue({
@@ -59,7 +59,7 @@ And, let’s also add turns which we’’ll use to log the actions of our playe
 
 Now let’s use these data properties in our html.
 
-Index.html
+#### Index.html
 ```
 <div class="small-6 columns">
    <h1 class="text-center">YOU</h1>
@@ -92,7 +92,7 @@ Similarly, modify the template of Monster.
 
 Now, we’ll use v-if and v-else directives of view in our html template to show different parts conditionally.
 
-index.html
+#### index.html
 ```
 <section class="row controls" v-if="!gameIsRunning">
     <div class="small-12 columns">
