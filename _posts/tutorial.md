@@ -32,40 +32,36 @@ Here is the head section of HTML page in which we have title, script of vue and 
                 <h1 class="text-center">YOU</h1>
                 <div class="healthbar">
                     <div class="healthbar text-center" 
-                    style="background-color: green; margin: 0; color: white;" 
-                    :style="{width: playerHealth + '%'}">
-                        {{ playerHealth }}
+                    style="background-color: green; margin: 0; color: white;">
+                    
                     </div>
                 </div>
             </div>
             <div class="small-6 columns">
                 <h1 class="text-center">MONSTER</h1>
                 <div class="healthbar">
-                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" :style="{width: monsterHealth + '%'}">
-                        {{ monsterHealth }}
+                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;">
                     </div>
                 </div>
             </div>
         </section>
-        <section class="row controls" v-if="!gameIsRunning">
+        <section class="row controls">
             <div class="small-12 columns">
-                <button id="start-game" @click="startGame">START NEW GAME</button>
+                <button id="start-game">START NEW GAME</button>
             </div>
         </section>
-        <section class="row controls" v-else>
+        <section class="row controls">
             <div class="small-12 columns">
-                <button id="attack" @click="attack">ATTACK</button>
-                <button id="special-attack" @click="specialAttack">SPECIAL ATTACK</button>
-                <button id="heal" @click="heal">HEAL</button>
-                <button id="give-up" @click="giveUp">GIVE UP</button>
+                <button id="attack">ATTACK</button>
+                <button id="special-attack"">SPECIAL ATTACK</button>
+                <button id="heal">HEAL</button>
+                <button id="give-up">GIVE UP</button>
             </div>
         </section>
-        <section class="row log" v-if="turns.length > 0" >
+        <section class="row log">
             <div class="small-12 columns">
                 <ul>
-                    <li v-for="turn in turns"
-                        :class= "{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}" >
-                        {{ turn.text }}
+                    <li 
                     </li>
                 </ul>
             </div>
@@ -134,7 +130,7 @@ Now let’s use these data properties in our html.
 ```
 We’ll bind the data using the “Mustache” syntax (double curly braces). Bind playerHealth in the div body. If you refresh the page now, you’ll see value intial value display in the health bar but the width is not set properly according to health. So now, we’ll bind the “playerHealth” with the width property of style using “v-bind” directive to adjust the width of container according to player’s health. We use ‘%’ to make sure it fills its parent container according to percentage, otherwise, vue will use pixels.
 
-Now, refresh the page again and you’ll see the entire width is filled.
+
 
 Similarly, modify the template of Monster.
 ```
@@ -150,7 +146,15 @@ Similarly, modify the template of Monster.
 </div>
 ```
 
+Now, refresh the page again and you’ll see the entire width is filled.
+
+![Image](/images/MS-9.png)
+
 Now, we’ll use v-if and v-else directives of view in our html template to show different parts conditionally.
+
+Before:
+
+![Image](/images/MS-7.png)
 
 #### index.html
 ```
@@ -170,6 +174,8 @@ Now, we’ll use v-if and v-else directives of view in our html template to show
 </section>
 ```
 Take a look at the first section in the code above, it has v-if="!gameIsRunning" which makes sure that this section is only displayed when the game is not running, hence the ‘!’ sign. Similarly, we have used v-else in the next section that means that this section will get displayed if game is running. Here we can also use v-if="gameIsRunning" instead of using v-else. As of now, if you’ll refresh the page, you’ll only see the section with “START NEW GAME” button.
+
+![Image](/images/MS-6.png)
 ```
 Note: In order to use v-if and v-else, it’s important that both the elements should follow each other and should have the same type as well.
 ```
@@ -200,8 +206,6 @@ Now let’s add some functionalities to the buttons that we have. In order to do
 ```
 As you can see in the code above, we’ve attached click events to all the buttons with some functions attached to them like ‘startGame’, ‘attack’ which are still to be created.
 
-Add turns edits herer………..
-
 So, let’s start creating functions. To start creating functions, we’ll add methods object in app.js file.
 
 #### app.js
@@ -228,6 +232,8 @@ This function is applied on “START NEW GAME” button. So, firstly this button
 
 Save your files, refresh the page again and press the “START NEW GAME” button. You’ll notice that the section with attack buttons shows up. GOOD WORK!
 
+
+![Image](/images/MS-5.png)
 
 Before, we move on to create functions to attack we’ll create two more functions that we’ll use in other functions.
 
